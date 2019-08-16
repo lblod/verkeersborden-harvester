@@ -84,13 +84,27 @@ class VerkeersbordenHarvester
 
   def insert_verkeersbordconcept_status_codes()
     mapping = {}
+
+   salt = 'c4596f16-534b-4b81-af8e-b19919039be7'
+   subject = RDF::URI(SCHEME_BASE_URI % {:scheme_name => 'VerkeersbordconceptstatusCode'})
+   uuid = hash(salt + ":" + 'VerkeersbordconceptstatusCode')
+
+   @graph << RDF.Statement(subject, RDF.type, SKOS.ConceptScheme)
+   @graph << RDF.Statement(subject, MU.uuid, uuid)
+   @graph << RDF.Statement(subject, SKOS.prefLabel, 'VerkeersbordconceptstatusCode')
+   @graph << RDF.Statement(subject, SKOS.note, 'Duidt of het verkeersbordconcept nog gebruikt wordt.')
+
+   @graph_code_list << RDF.Statement(subject, RDF.type, SKOS.ConceptScheme)
+   @graph_code_list << RDF.Statement(subject, SKOS.prefLabel, 'VerkeersbordconceptstatusCode')
+   @graph_code_list << RDF.Statement(subject, SKOS.note, 'Duidt of het verkeersbordconcept nog gebruikt wordt.')
+
     ['stabiel', 'onstabiel', 'afgeschaft'].each do |row|
-      insert_verkeersbordconcept_status_code(mapping, row)
+      insert_verkeersbordconcept_status_code(mapping, row, subject)
     end
     mapping
   end
 
-  def insert_verkeersbordconcept_status_code(mapping, label)
+  def insert_verkeersbordconcept_status_code(mapping, label, conceptscheme_uri)
     salt = '6f497aa4-9d9d-4c5e-be71-cad0a65417fe'
     uuid = hash(salt + ":" + label)
     subject = RDF::URI(BASE_URI % {:resource => 'VerkeersbordconceptstatusCode', :id => uuid})
@@ -98,9 +112,11 @@ class VerkeersbordenHarvester
     @graph << RDF.Statement(subject, RDF.type, MOB.VerkeersbordconceptstatusCode)
     @graph << RDF.Statement(subject, SKOS.prefLabel, label)
     @graph << RDF.Statement(subject, MU.uuid, uuid)
+    @graph << RDF.Statement(subject, SKOS.topConceptOf, conceptscheme_uri)
 
     @graph_code_list << RDF.Statement(subject, RDF.type, MOB.VerkeersbordconceptstatusCode)
     @graph_code_list << RDF.Statement(subject, SKOS.prefLabel, label)
+    @graph_code_list << RDF.Statement(subject, SKOS.topConceptOf, conceptscheme_uri)
 
     mapping[label] = subject
   end
@@ -179,6 +195,7 @@ class VerkeersbordenHarvester
     file_name = File.basename(file)
     file_ext = File.extname(file)[1..-1]
 
+    @graph << RDF.Statement(subject, RDF.type, FOAF.Image)
     @graph << RDF.Statement(subject, RDF.type, NFO.FileDataObject)
     @graph << RDF.Statement(subject, DC.created, RDF::Literal.new(date_now, datatype: RDF::XSD.datetime))
     @graph << RDF.Statement(subject, DC.modified, RDF::Literal.new(date_now, datatype: RDF::XSD.datetime))
@@ -195,6 +212,7 @@ class VerkeersbordenHarvester
     logical_file = subject
     subject = RDF::URI('share://%{file_name}' % {:file_name => file_name})
 
+    @graph << RDF.Statement(subject, RDF.type, FOAF.Image)
     @graph << RDF.Statement(subject, RDF.type, NFO.FileDataObject)
     @graph << RDF.Statement(subject, DC.created, RDF::Literal.new(date_now, datatype: RDF::XSD.datetime))
     @graph << RDF.Statement(subject, DC.modified, RDF::Literal.new(date_now, datatype: RDF::XSD.datetime))
