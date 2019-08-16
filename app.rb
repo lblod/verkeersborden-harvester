@@ -5,8 +5,9 @@ require 'mimemagic'
 require 'fileutils'
 
 class VerkeersbordenHarvester
+  # TODO: clean up vocab
   ORG = RDF::Vocab::ORG
-#  FOAF = RDF::Vocab::FOAF
+  FOAF = RDF::Vocab::FOAF
   SKOS = RDF::Vocab::SKOS
   DC = RDF::Vocab::DC
   PROV = RDF::Vocab::PROV
@@ -245,9 +246,6 @@ class VerkeersbordenHarvester
   end
 
 end
-
-
-
 
 
 harvester = VerkeersbordenHarvester.new('input/20180326-20190813', 'LijstVerkeersSignalisatie.html', './output')
