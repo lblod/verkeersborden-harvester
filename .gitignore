@@ -1,0 +1,8 @@
+.DS_Store
+output/*
+!output/concept_schemes/
+!output/codelists/
+!output/intermediate_mappings/
+*~
+google_api_credentials
+.byebug_history
