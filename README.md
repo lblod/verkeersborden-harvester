@@ -2,7 +2,7 @@
 Harvests verkeersbordendata, based on (manually collected) data from [wegcode.be](https://wegcode.be/wetteksten/secties/kb/wegcode/248-art65)
 
 ## Running
-```docker run -it --rm --name verkeersborden-harvester -v "$PWD":/app -w /app ruby:2.5 ./run.sh```
+```docker run -it --rm --name verkeersborden-harvester -v "$PWD":/app -w /app ruby:2.5  /bin/bash run.sh```
 
 ## Output
 In output folder.
