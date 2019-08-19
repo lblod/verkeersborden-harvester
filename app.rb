@@ -25,7 +25,7 @@ class VerkeersbordenHarvester
   BESLUIT = RDF::Vocabulary.new("http://data.vlaanderen.be/ns/besluit#")
   EXT = RDF::Vocabulary.new("http://mu.semte.ch/vocabularies/ext/")
 
-  BASE_URI = 'http://data.vlaanderen/ns/mobiliteit/%{resource}/%{id}'
+  MOW_BASE_URI = 'http://mow.lblod.info/%{resource}/%{id}'
   DATA_GIFT = 'http://mobiliteit.vo.data.gift/Verkeersbordconcept/afbeelding/%{id}'
   CONCEPT_BASE_URI = 'http://data.vlaanderen.be/id/concept/%{scheme_name}/%{id}'
   SCHEME_BASE_URI = 'http://data.vlaanderen.be/id/conceptscheme/%{scheme_name}'
@@ -107,16 +107,18 @@ class VerkeersbordenHarvester
   def insert_verkeersbordconcept_status_code(mapping, label, conceptscheme_uri)
     salt = '6f497aa4-9d9d-4c5e-be71-cad0a65417fe'
     uuid = hash(salt + ":" + label)
-    subject = RDF::URI(BASE_URI % {:resource => 'VerkeersbordconceptstatusCode', :id => uuid})
+    subject = RDF::URI(CONCEPT_BASE_URI % {:scheme_name => 'VerkeersbordconceptstatusCode', :id => uuid})
 
     @graph << RDF.Statement(subject, RDF.type, MOB.VerkeersbordconceptstatusCode)
     @graph << RDF.Statement(subject, SKOS.prefLabel, label)
     @graph << RDF.Statement(subject, MU.uuid, uuid)
     @graph << RDF.Statement(subject, SKOS.topConceptOf, conceptscheme_uri)
+    @graph << RDF.Statement(subject, SKOS.inScheme, conceptscheme_uri)
 
     @graph_code_list << RDF.Statement(subject, RDF.type, MOB.VerkeersbordconceptstatusCode)
     @graph_code_list << RDF.Statement(subject, SKOS.prefLabel, label)
     @graph_code_list << RDF.Statement(subject, SKOS.topConceptOf, conceptscheme_uri)
+    @graph_code_list << RDF.Statement(subject, SKOS.inScheme, conceptscheme_uri)
 
     mapping[label] = subject
   end
@@ -124,7 +126,7 @@ class VerkeersbordenHarvester
   def insert_verkeersbordconcept_status(code_uri, verkeersbordnaam)
     salt = 'af8c3801-ab28-4233-8878-761068bd4807'
     uuid = hash(salt + ":" + verkeersbordnaam)
-    subject = RDF::URI(BASE_URI % {:resource => 'Verkeersbordconceptstatus', :id => uuid})
+    subject = RDF::URI(MOW_BASE_URI % {:resource => 'Verkeersbordconceptstatus', :id => uuid})
 
     @graph << RDF.Statement(subject, RDF.type, MOB.Verkeersbordconceptstatus)
     @graph << RDF.Statement(subject, MOB['Verkeersbordconceptstatus.status'], code_uri)
@@ -158,15 +160,17 @@ class VerkeersbordenHarvester
   def insert_verkeersbordcategorie(mapping, voorkeursnaam, conceptscheme_uri)
     salt = "dd2b2f27-ca5a-4ac1-bd8d-5d67c1cbf9cb"
     uuid = hash(salt + ":" + voorkeursnaam)
-    subject = RDF::URI(BASE_URI % {:resource => 'Verkeersbordcatergorie', :id => uuid})
+    subject = RDF::URI(CONCEPT_BASE_URI % {:scheme_name => 'Verkeersbordcatergorie', :id => uuid})
     @graph << RDF.Statement(subject, RDF.type, MOB.Vekeersbordcategorie)
     @graph << RDF.Statement(subject, SKOS.prefLabel, voorkeursnaam)
     @graph << RDF.Statement(subject, MU.uuid, uuid)
     @graph << RDF.Statement(subject, SKOS.topConceptOf, conceptscheme_uri)
+    @graph << RDF.Statement(subject, SKOS.inScheme, conceptscheme_uri)
 
     @graph_code_list << RDF.Statement(subject, RDF.type, MOB.Vekeersbordcategorie)
     @graph_code_list << RDF.Statement(subject, SKOS.prefLabel, voorkeursnaam)
     @graph_code_list << RDF.Statement(subject, SKOS.topConceptOf, conceptscheme_uri)
+    @graph_code_list << RDF.Statement(subject, SKOS.inScheme, conceptscheme_uri)
 
     mapping[voorkeursnaam] = subject
     mapping
@@ -259,7 +263,7 @@ class VerkeersbordenHarvester
   def insert_verkeersbordconcept(mapping, status_uri, afbeelding_uri, betekenis, classificatie_uri, verkeersbord_code, conceptscheme_uri)
     salt = '2864a54c-ad29-49ae-8e38-0f2f790f9f46'
     uuid = hash(salt + ":" + verkeersbord_code)
-    subject = RDF::URI(BASE_URI % {:resource => 'Verkeersbordconcept', :id => uuid})
+    subject = RDF::URI(CONCEPT_BASE_URI % {:scheme_name => 'Verkeersbordconcept', :id => uuid})
 
     @graph << RDF.Statement(subject, RDF.type, MOB.Verkeersbordconcept)
     @graph << RDF.Statement(subject, MU.uuid, uuid)
@@ -271,11 +275,13 @@ class VerkeersbordenHarvester
     @graph << RDF.Statement(subject, SW.term_status, status_uri)
     @graph << RDF.Statement(subject, SKOS.prefLabel, verkeersbord_code)
     @graph << RDF.Statement(subject, SKOS.topConceptOf, conceptscheme_uri)
+    @graph << RDF.Statement(subject, SKOS.inScheme, conceptscheme_uri)
 
     @graph_code_list << RDF.Statement(subject, RDF.type, MOB.Verkeersbordconcept)
     @graph_code_list << RDF.Statement(subject, SKOS.prefLabel, verkeersbord_code)
     @graph_code_list << RDF.Statement(subject, SKOS.scopeNote, betekenis)
     @graph_code_list << RDF.Statement(subject, SKOS.topConceptOf, conceptscheme_uri)
+    @graph_code_list << RDF.Statement(subject, SKOS.inScheme, conceptscheme_uri)
 
     mapping[verkeersbord_code] = subject
   end
