@@ -20,7 +20,7 @@ class VerkeersbordenHarvester
   ADMS = RDF::Vocabulary.new('http://www.w3.org/ns/adms#')
   SW = RDF::Vocabulary.new('http://www.w3.org/2003/06/sw-vocab-status/ns#')
 
-  MOB = RDF::Vocabulary.new("http://data.vlaanderen.be/ns/mobiliteit#")
+  MOB = RDF::Vocabulary.new("https://data.vlaanderen.be/ns/mobiliteit#")
   MANDAAT = RDF::Vocabulary.new("http://data.vlaanderen.be/ns/mandaat#")
   BESLUIT = RDF::Vocabulary.new("http://data.vlaanderen.be/ns/besluit#")
   EXT = RDF::Vocabulary.new("http://mu.semte.ch/vocabularies/ext/")
