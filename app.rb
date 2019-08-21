@@ -86,16 +86,16 @@ class VerkeersbordenHarvester
     mapping = {}
 
    salt = 'c4596f16-534b-4b81-af8e-b19919039be7'
-   subject = RDF::URI(SCHEME_BASE_URI % {:scheme_name => 'VerkeersbordconceptstatusCode'})
-   uuid = hash(salt + ":" + 'VerkeersbordconceptstatusCode')
+   subject = RDF::URI(SCHEME_BASE_URI % {:scheme_name => 'VerkeersbordconceptStatusCode'})
+   uuid = hash(salt + ":" + 'VerkeersbordconceptStatusCode')
 
    @graph << RDF.Statement(subject, RDF.type, SKOS.ConceptScheme)
    @graph << RDF.Statement(subject, MU.uuid, uuid)
-   @graph << RDF.Statement(subject, SKOS.prefLabel, 'VerkeersbordconceptstatusCode')
+   @graph << RDF.Statement(subject, SKOS.prefLabel, 'VerkeersbordconceptStatusCode')
    @graph << RDF.Statement(subject, SKOS.note, 'Duidt of het verkeersbordconcept nog gebruikt wordt.')
 
    @graph_code_list << RDF.Statement(subject, RDF.type, SKOS.ConceptScheme)
-   @graph_code_list << RDF.Statement(subject, SKOS.prefLabel, 'VerkeersbordconceptstatusCode')
+   @graph_code_list << RDF.Statement(subject, SKOS.prefLabel, 'VerkeersbordconceptStatusCode')
    @graph_code_list << RDF.Statement(subject, SKOS.note, 'Duidt of het verkeersbordconcept nog gebruikt wordt.')
 
     ['stabiel', 'onstabiel', 'afgeschaft'].each do |row|
@@ -107,15 +107,15 @@ class VerkeersbordenHarvester
   def insert_verkeersbordconcept_status_code(mapping, label, conceptscheme_uri)
     salt = '6f497aa4-9d9d-4c5e-be71-cad0a65417fe'
     uuid = hash(salt + ":" + label)
-    subject = RDF::URI(CONCEPT_BASE_URI % {:scheme_name => 'VerkeersbordconceptstatusCode', :id => uuid})
+    subject = RDF::URI(CONCEPT_BASE_URI % {:scheme_name => 'VerkeersbordconceptStatusCode', :id => uuid})
 
-    @graph << RDF.Statement(subject, RDF.type, MOB.VerkeersbordconceptstatusCode)
+    @graph << RDF.Statement(subject, RDF.type, MOB.VerkeersbordconceptStatusCode)
     @graph << RDF.Statement(subject, SKOS.prefLabel, label)
     @graph << RDF.Statement(subject, MU.uuid, uuid)
     @graph << RDF.Statement(subject, SKOS.topConceptOf, conceptscheme_uri)
     @graph << RDF.Statement(subject, SKOS.inScheme, conceptscheme_uri)
 
-    @graph_code_list << RDF.Statement(subject, RDF.type, MOB.VerkeersbordconceptstatusCode)
+    @graph_code_list << RDF.Statement(subject, RDF.type, MOB.VerkeersbordconceptStatusCode)
     @graph_code_list << RDF.Statement(subject, SKOS.prefLabel, label)
     @graph_code_list << RDF.Statement(subject, SKOS.topConceptOf, conceptscheme_uri)
     @graph_code_list << RDF.Statement(subject, SKOS.inScheme, conceptscheme_uri)
@@ -126,9 +126,9 @@ class VerkeersbordenHarvester
   def insert_verkeersbordconcept_status(code_uri, verkeersbordnaam)
     salt = 'af8c3801-ab28-4233-8878-761068bd4807'
     uuid = hash(salt + ":" + verkeersbordnaam)
-    subject = RDF::URI(MOW_BASE_URI % {:resource => 'Verkeersbordconceptstatus', :id => uuid})
+    subject = RDF::URI(MOW_BASE_URI % {:resource => 'VerkeersbordconceptStatus', :id => uuid})
 
-    @graph << RDF.Statement(subject, RDF.type, MOB.Verkeersbordconceptstatus)
+    @graph << RDF.Statement(subject, RDF.type, MOB.VerkeersbordconceptStatus)
     @graph << RDF.Statement(subject, MOB['Verkeersbordconceptstatus.status'], code_uri)
     @graph << RDF.Statement(subject, MU.uuid, uuid)
 
