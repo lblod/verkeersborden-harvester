@@ -162,13 +162,13 @@ class VerkeersbordenHarvester
     salt = "dd2b2f27-ca5a-4ac1-bd8d-5d67c1cbf9cb"
     uuid = hash(salt + ":" + voorkeursnaam)
     subject = RDF::URI(CONCEPT_BASE_URI % {:scheme_name => 'Verkeersbordcatergorie', :id => uuid})
-    @graph << RDF.Statement(subject, RDF.type, MOB.Vekeersbordcategorie)
+    @graph << RDF.Statement(subject, RDF.type, MOB.Verkeersbordcategorie)
     @graph << RDF.Statement(subject, SKOS.prefLabel, voorkeursnaam)
     @graph << RDF.Statement(subject, MU.uuid, uuid)
     @graph << RDF.Statement(subject, SKOS.topConceptOf, conceptscheme_uri)
     @graph << RDF.Statement(subject, SKOS.inScheme, conceptscheme_uri)
 
-    @graph_code_list << RDF.Statement(subject, RDF.type, MOB.Vekeersbordcategorie)
+    @graph_code_list << RDF.Statement(subject, RDF.type, MOB.Verkeersbordcategorie)
     @graph_code_list << RDF.Statement(subject, SKOS.prefLabel, voorkeursnaam)
     @graph_code_list << RDF.Statement(subject, SKOS.topConceptOf, conceptscheme_uri)
     @graph_code_list << RDF.Statement(subject, SKOS.inScheme, conceptscheme_uri)
