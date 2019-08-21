@@ -40,6 +40,16 @@ class InstructieHarvester
           end
           index += 1
         end
+        query = %(
+SELECT ?combinatie
+WHERE {
+      ?combinatie a <#{LBLOD_MOW.Verkeersbordcombinatie}>; <#{DC.hasPart}> ?part.
+} GROUP BY ?combinatie HAVING (COUNT(?part) < 2)
+)
+        SPARQL.execute(query, graph).each_solution do |solution|
+          puts "combinatie #{solution[:combinatie]} heeft maar 1 bord en wordt verwijderd"
+          graph.delete([solution[:combinatie], nil, nil])
+        end
         File.write(@output, graph.dump(:ttl), mode: 'w')
       end
     rescue Exception => e
