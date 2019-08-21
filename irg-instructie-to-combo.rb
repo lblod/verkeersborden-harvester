@@ -72,7 +72,7 @@ class InstructieHarvester
 
   end
   def parse_row(index, row)
-    uuid = row.first[0]
+    uuid = row.first[1]
     if uuid
       row_iri = RDF::URI("http://data.lblod.info/verkeersbordconcept-combinaties/#{uuid}")
       verkeersbord_code = row["verkeersbord_code"]
