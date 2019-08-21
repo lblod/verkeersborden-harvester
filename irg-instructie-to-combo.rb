@@ -32,15 +32,15 @@ class InstructieHarvester
   def harvest
     index = 1
     begin
-      ::CSV.foreach(@csv_path, {  headers: :first_row, encoding: 'utf-8', quote_char: "\""  }) do |row|
-        RDF::Graph.new do |graph|
+      RDF::Graph.new do |graph|
+        ::CSV.foreach(@csv_path, {  headers: :first_row, encoding: 'utf-8', quote_char: "\""  }) do |row|
           statements = parse_row(index, row)
           if statements.length > 0
             graph.insert_statements(statements)
-            File.write(@output, graph.dump(:ttl), mode: 'a')
           end
+          index += 1
         end
-        index += 1
+        File.write(@output, graph.dump(:ttl), mode: 'w')
       end
     rescue Exception => e
       puts "error on line #{index}"
@@ -72,19 +72,26 @@ class InstructieHarvester
 
   end
   def parse_row(index, row)
-    row_iri = RDF::URI("http://data.lblod.info/verkeersbordconcept-combinaties/#{row["maatregel_id"]}")
-    verkeersbord_code = row["verkeersbord_code"]
-    verkeersbord_iri = find_verkeersbord(verkeersbord_code)
-    verkeersbord_instructie = row["instructie"]
-    statements = []
-    if verkeersbord_iri
-      statements << RDF::Statement.new( row_iri, RDF.type, LBLOD_MOW["Verkeersbordcombinatie"])
-      statements << RDF::Statement.new( row_iri, DC.hasPart, verkeersbord_iri )
-      statements << RDF::Statement.new(verkeersbord_iri, DC.description, RDF::Literal.new(verkeersbord_instructie))
+    uuid = row.first[0]
+    if uuid
+      row_iri = RDF::URI("http://data.lblod.info/verkeersbordconcept-combinaties/#{uuid}")
+      verkeersbord_code = row["verkeersbord_code"]
+      verkeersbord_iri = find_verkeersbord(verkeersbord_code)
+      verkeersbord_instructie = row["instructie"]
+      statements = []
+      if verkeersbord_iri
+        statements << RDF::Statement.new( row_iri, RDF.type, LBLOD_MOW["Verkeersbordcombinatie"])
+        statements << RDF::Statement.new( row_iri, DC.hasPart, verkeersbord_iri )
+        statements << RDF::Statement.new( row_iri, MU.uuid, RDF::Literal.new(uuid))
+        statements << RDF::Statement.new(verkeersbord_iri, DC.description, RDF::Literal.new(verkeersbord_instructie))
+      else
+        puts "rij #{index} geen verkeersbord gevonden voor code #{verkeersbord_code.inspect}"
+      end
+      statements
     else
-      puts "row #{index} geen verkeersbord gevonden voor code #{verkeersbord_code.inspect}"
+      puts "rij #{index} heeft geen uuid"
+      []
     end
-    statements
   end
 end
 
