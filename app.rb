@@ -24,6 +24,7 @@ class VerkeersbordenHarvester
   MANDAAT = RDF::Vocabulary.new("http://data.vlaanderen.be/ns/mandaat#")
   BESLUIT = RDF::Vocabulary.new("http://data.vlaanderen.be/ns/besluit#")
   EXT = RDF::Vocabulary.new("http://mu.semte.ch/vocabularies/ext/")
+  LBLOD_MOW = RDF::Vocabulary.new("http://data.lblod.info/vocabularies/mobiliteit/")
 
   MOW_BASE_URI = 'http://mow.lblod.info/%{resource}/%{id}'
   DATA_GIFT = 'http://mobiliteit.vo.data.gift/Verkeersbordconcept/afbeelding/%{id}'
@@ -109,13 +110,13 @@ class VerkeersbordenHarvester
     uuid = hash(salt + ":" + label)
     subject = RDF::URI(CONCEPT_BASE_URI % {:scheme_name => 'VerkeersbordconceptStatusCode', :id => uuid})
 
-    @graph << RDF.Statement(subject, RDF.type, MOB.VerkeersbordconceptStatusCode)
+    @graph << RDF.Statement(subject, RDF.type, LBLOD_MOW.VerkeersbordconceptStatusCode)
     @graph << RDF.Statement(subject, SKOS.prefLabel, label)
     @graph << RDF.Statement(subject, MU.uuid, uuid)
     @graph << RDF.Statement(subject, SKOS.topConceptOf, conceptscheme_uri)
     @graph << RDF.Statement(subject, SKOS.inScheme, conceptscheme_uri)
 
-    @graph_code_list << RDF.Statement(subject, RDF.type, MOB.VerkeersbordconceptStatusCode)
+    @graph_code_list << RDF.Statement(subject, RDF.type, LBLOD_MOW.VerkeersbordconceptStatusCode)
     @graph_code_list << RDF.Statement(subject, SKOS.prefLabel, label)
     @graph_code_list << RDF.Statement(subject, SKOS.topConceptOf, conceptscheme_uri)
     @graph_code_list << RDF.Statement(subject, SKOS.inScheme, conceptscheme_uri)
