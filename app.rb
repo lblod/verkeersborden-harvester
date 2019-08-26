@@ -93,11 +93,11 @@ class VerkeersbordenHarvester
    @graph << RDF.Statement(subject, RDF.type, SKOS.ConceptScheme)
    @graph << RDF.Statement(subject, MU.uuid, uuid)
    @graph << RDF.Statement(subject, SKOS.prefLabel, 'VerkeersbordconceptStatusCode')
-   @graph << RDF.Statement(subject, SKOS.note, 'Duidt of het verkeersbordconcept nog gebruikt wordt.')
+   @graph << RDF.Statement(subject, SKOS.scopeNote, 'Duidt of het verkeersbordconcept nog gebruikt wordt.')
 
    @graph_code_list << RDF.Statement(subject, RDF.type, SKOS.ConceptScheme)
    @graph_code_list << RDF.Statement(subject, SKOS.prefLabel, 'VerkeersbordconceptStatusCode')
-   @graph_code_list << RDF.Statement(subject, SKOS.note, 'Duidt of het verkeersbordconcept nog gebruikt wordt.')
+   @graph_code_list << RDF.Statement(subject, SKOS.scopeNote, 'Duidt of het verkeersbordconcept nog gebruikt wordt.')
 
     ['stabiel', 'onstabiel', 'afgeschaft'].each do |row|
       insert_verkeersbordconcept_status_code(mapping, row, subject)
@@ -272,6 +272,7 @@ class VerkeersbordenHarvester
       @graph << RDF.Statement(subject, MOB.grafischeWeergave, afbeelding_uri)
     end
     @graph << RDF.Statement(subject, SKOS.scopeNote, betekenis)
+    @graph << RDF.Statement(subject, SKOS.definition, betekenis)
     @graph << RDF.Statement(subject, ORG.classification, classificatie_uri)
     @graph << RDF.Statement(subject, SW.term_status, status_uri)
     @graph << RDF.Statement(subject, SKOS.prefLabel, verkeersbord_code)
@@ -280,6 +281,7 @@ class VerkeersbordenHarvester
 
     @graph_code_list << RDF.Statement(subject, RDF.type, MOB.Verkeersbordconcept)
     @graph_code_list << RDF.Statement(subject, SKOS.prefLabel, verkeersbord_code)
+    @graph_code_list << RDF.Statement(subject, SKOS.definition, betekenis)
     @graph_code_list << RDF.Statement(subject, SKOS.scopeNote, betekenis)
     @graph_code_list << RDF.Statement(subject, SKOS.topConceptOf, conceptscheme_uri)
     @graph_code_list << RDF.Statement(subject, SKOS.inScheme, conceptscheme_uri)
