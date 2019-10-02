@@ -1,5 +1,6 @@
 require 'linkeddata'
 require 'csv'
+require 'digest'
 
 class InstructieHarvester
   ORG = RDF::Vocab::ORG
@@ -41,7 +42,7 @@ class InstructieHarvester
           index += 1
         end
         query = %(
-SELECT ?combinatie
+SELECT ?combinatie (GROUP_CONCAT(?part) as ?parts)
 WHERE {
       ?combinatie a <#{LBLOD_MOW.Verkeersbordcombinatie}>; <#{DC.hasPart}> ?part.
 } GROUP BY ?combinatie HAVING (COUNT(?part) < 2)
@@ -49,6 +50,7 @@ WHERE {
         SPARQL.execute(query, graph).each_solution do |solution|
           puts "combinatie #{solution[:combinatie]} heeft maar 1 bord en wordt verwijderd"
           graph.delete([solution[:combinatie], nil, nil])
+          graph.delete([RDF::URI(solution[:parts]), nil, nil])
         end
         File.write(@output, graph.dump(:ttl), mode: 'w')
       end
@@ -90,10 +92,15 @@ WHERE {
       verkeersbord_instructie = row["instructie"]
       statements = []
       if verkeersbord_iri
+        maatregel_uuid = Digest::MD5.hexdigest("#{uuid}#{verkeersbord_iri}")
+        maatregel_concept = RDF::URI("http://data.lblod.info/maatregel-concepten/#{maatregel_uuid}")
         statements << RDF::Statement.new( row_iri, RDF.type, LBLOD_MOW["Verkeersbordcombinatie"])
-        statements << RDF::Statement.new( row_iri, DC.hasPart, verkeersbord_iri )
+        statements << RDF::Statement.new( row_iri, DC.hasPart, maatregel_concept )
         statements << RDF::Statement.new( row_iri, MU.uuid, RDF::Literal.new(uuid))
-        statements << RDF::Statement.new(verkeersbord_iri, DC.description, RDF::Literal.new(verkeersbord_instructie))
+        statements << RDF::Statement.new( maatregel_concept, RDF.type, LBLOD_MOW["MaatregelConcept"])
+        statements << RDF::Statement.new( maatregel_concept, MU.uuid, maatregel_uuid)
+        statements << RDF::Statement.new( maatregel_concept, DC.description, RDF::Literal.new(verkeersbord_instructie))
+        statements << RDF::Statement.new( maatregel_concept, LBLOD_MOW['verkeersbordconcept'], verkeersbord_iri)
       else
         puts "rij #{index} geen verkeersbord gevonden voor code #{verkeersbord_code.inspect}"
       end

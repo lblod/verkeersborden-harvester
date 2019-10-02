@@ -27,7 +27,7 @@ class VerkeersbordenHarvester
   LBLOD_MOW = RDF::Vocabulary.new("http://data.lblod.info/vocabularies/mobiliteit/")
 
   MOW_BASE_URI = 'http://mow.lblod.info/%{resource}/%{id}'
-  DATA_GIFT = 'http://mobiliteit.vo.data.gift/Verkeersbordconcept/afbeelding/%{id}'
+  DATA_GIFT = 'http://mobiliteit.vo.data.gift/images/%{id}'
   CONCEPT_BASE_URI = 'http://data.vlaanderen.be/id/concept/%{scheme_name}/%{id}'
   SCHEME_BASE_URI = 'http://data.vlaanderen.be/id/conceptscheme/%{scheme_name}'
 
