@@ -12,7 +12,7 @@ class VerkeersbordenHarvester
   DC = RDF::Vocab::DC
   PROV = RDF::Vocab::PROV
   RDFS = RDF::Vocab::RDFS
-  REGORG = RDF::Vocabulary.new("https://www.w3.org/ns/regorg#")
+  REGORG = RDF::Vocabulary.new("http://www.w3.org/ns/regorg#")
   MU = RDF::Vocabulary.new("http://mu.semte.ch/vocabularies/core/")
   NFO = RDF::Vocabulary.new("http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#")
   NIE =  RDF::Vocabulary.new("http://www.semanticdesktop.org/ontologies/2007/01/19/nie#")
