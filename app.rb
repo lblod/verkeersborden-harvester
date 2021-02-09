@@ -191,9 +191,9 @@ class VerkeersbordenHarvester
       return mapping
     end
     #logical file
-    salt = 'e98ab6c5-e74a-434f-a11f-4cdb7552785c'
-    uuid = hash(salt + ':' + url)
-    subject = RDF::URI(DATA_GIFT % {:id => uuid})
+    salt = '8e462ad2-1396-4cfa-8d58-8ab6317e363e'
+    uuid_logical = hash(salt + ':' + url)
+    subject = RDF::URI(DATA_GIFT % {:id => uuid_logical})
     date_now = Time.now.utc.iso8601
     file = File.open(url)
     mime = MimeMagic.by_magic(file).type
@@ -204,16 +204,16 @@ class VerkeersbordenHarvester
     @graph << RDF.Statement(subject, RDF.type, NFO.FileDataObject)
     @graph << RDF.Statement(subject, DC.created, RDF::Literal.new(date_now, datatype: RDF::XSD.datetime))
     @graph << RDF.Statement(subject, DC.modified, RDF::Literal.new(date_now, datatype: RDF::XSD.datetime))
-    @graph << RDF.Statement(subject, MU.uuid, uuid)
+    @graph << RDF.Statement(subject, MU.uuid, uuid_logical)
     @graph << RDF.Statement(subject, DC.format, mime)
     @graph << RDF.Statement(subject, NFO.fileName, file_name)
     @graph << RDF.Statement(subject, NFO.fileSize, file.size)
     @graph << RDF.Statement(subject, DBPEDIA.fileExtension, file_ext)
 
     #physical file
-    salt = '8e462ad2-1396-4cfa-8d58-8ab6317e363e'
+    salt = 'e98ab6c5-e74a-434f-a11f-4cdb7552785c'
     uuid = hash(salt + ':' + url)
-    file_name = uuid + '.' + file_ext
+    file_name = uuid_logical + '.' + file_ext
     logical_file = subject
     subject = RDF::URI('share://%{file_name}' % {:file_name => file_name})
 
