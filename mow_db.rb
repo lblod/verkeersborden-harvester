@@ -1,9 +1,11 @@
-require 'linkeddata'
 require 'csv'
 require 'digest'
+require 'fileutils'
+require 'linkeddata'
+require 'mimemagic'
 
-# Harvest Road_Sign_Concepts defined as Verkeersbordconcept
-# in application profile https://data.vlaanderen.be/doc/applicatieprofiel/verkeersborden/#Verkeersbordconcept
+# Harvest Road_Sign_Concepts defined as Verkeersbordconcept in application profile
+# https://data.vlaanderen.be/doc/applicatieprofiel/verkeersborden/#Verkeersbordconcept
 # from mow database
 class Road_Sign_ConceptHarvester
   DC = RDF::Vocab::DC
@@ -53,6 +55,8 @@ class Road_Sign_ConceptHarvester
   def initialize(input_file, output_file)
     @input_file = input_file
     @output_file = output_file
+    #TODO
+    @output_files = File.join('output/', 'files')
     @graph = RDF::Graph.new
   end
 
@@ -71,13 +75,12 @@ class Road_Sign_ConceptHarvester
 
   # TODO:
   # - images
+  # - variations
   def parse_row(index, row)
     road_sign_concept = road_sign_concept(index, row['Bordcode'])
 
     subject = road_sign_concept['uri']
     meaning = attribute(index, row, 'betekenis')
-    application = attribute(index, row, 'toepassing')
-    note = attribute(index, row, 'opmerking')
     category_uri = @@road_sign_categorie_uri_map[road_sign_concept['code'][0]]
     conceptscheme_uri = RDF::URI(format(SCHEME_BASE_URI, scheme_name: 'Verkeersbordconcept'))
 
@@ -90,10 +93,15 @@ class Road_Sign_ConceptHarvester
     @graph << RDF.Statement(subject, SKOS.inScheme, conceptscheme_uri)
 
     #app.rb logic:
+    image_url = insert_verkeersbordafbeelding(road_sign_concept['code'])
+    !image_url.nil? && @graph << RDF.Statement(subject, MOB.grafischeWeergave, image_url)
+
     status_uri = insert_verkeersbordconcept_status(@@road_sign_status_map['stabiel'], road_sign_concept['code'])
     @graph << RDF.Statement(subject, VS.term_status, status_uri)
 
     # Not yet formalized in application profile (2021-02)
+    application = attribute(index, row, 'toepassing')
+    note = attribute(index, row, 'opmerking')
     !application.nil? && @graph << RDF.Statement(road_sign_concept['uri'], SKOS.definition, application)
     !note.nil? && @graph << RDF.Statement(road_sign_concept['uri'], SKOS.note, note)
 
@@ -227,6 +235,56 @@ class Road_Sign_ConceptHarvester
     @graph << RDF.Statement(subject, MU.uuid, uuid)
 
     subject
+  end
+
+  # FIXME: known issue - inconsistent naming of images in source + multiple variants with same code
+  def insert_verkeersbordafbeelding(code)
+    url = "input/mowdb/icons/#{code}.svg"
+    if(!File.file?(url))
+      p "Warning: file %{url} not found" % {:url => url}
+      return nil
+    end
+    #logical file
+    salt = '8e462ad2-1396-4cfa-8d58-8ab6317e363e'
+    uuid_logical = hash(salt + ':' + url)
+    subject = RDF::URI(DATA_GIFT % {:id => uuid_logical})
+    date_now = Time.now.utc.iso8601
+    file = File.open(url)
+    mime = MimeMagic.by_magic(file).type
+    file_name = File.basename(file)
+    file_ext = File.extname(file)[1..-1]
+
+    @graph << RDF.Statement(subject, RDF.type, FOAF.Image)
+    @graph << RDF.Statement(subject, RDF.type, NFO.FileDataObject)
+    @graph << RDF.Statement(subject, DC.created, RDF::Literal.new(date_now, datatype: RDF::XSD.datetime))
+    @graph << RDF.Statement(subject, DC.modified, RDF::Literal.new(date_now, datatype: RDF::XSD.datetime))
+    @graph << RDF.Statement(subject, MU.uuid, uuid_logical)
+    @graph << RDF.Statement(subject, DC.format, mime)
+    @graph << RDF.Statement(subject, NFO.fileName, file_name)
+    @graph << RDF.Statement(subject, NFO.fileSize, file.size)
+    @graph << RDF.Statement(subject, DBPEDIA.fileExtension, file_ext)
+
+    #physical file
+    salt = 'e98ab6c5-e74a-434f-a11f-4cdb7552785c'
+    uuid = hash(salt + ':' + url)
+    file_name = uuid_logical + '.' + file_ext
+    logical_file = subject
+    subject = RDF::URI('share://%{file_name}' % {:file_name => file_name})
+
+    @graph << RDF.Statement(subject, RDF.type, FOAF.Image)
+    @graph << RDF.Statement(subject, RDF.type, NFO.FileDataObject)
+    @graph << RDF.Statement(subject, DC.created, RDF::Literal.new(date_now, datatype: RDF::XSD.datetime))
+    @graph << RDF.Statement(subject, DC.modified, RDF::Literal.new(date_now, datatype: RDF::XSD.datetime))
+    @graph << RDF.Statement(subject, MU.uuid, uuid)
+    @graph << RDF.Statement(subject, DC.format, mime)
+    @graph << RDF.Statement(subject, NFO.fileName, file_name)
+    @graph << RDF.Statement(subject, NFO.fileSize, file.size)
+    @graph << RDF.Statement(subject, DBPEDIA.fileExtension, file_ext)
+    @graph << RDF.Statement(subject, NIE.dataSource, logical_file)
+
+    #move file
+    FileUtils.cp(url, File.join(@output_files, file_name))
+    logical_file
   end
 
   def hash(str)
