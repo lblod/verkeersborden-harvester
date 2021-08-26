@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.0//EN' 'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 400" style="fill-opacity:1; color-rendering:auto; color-interpolation:auto; stroke:black; text-rendering:auto; stroke-linecap:square; stroke-miterlimit:10; stroke-opacity:1; shape-rendering:auto; fill:black; stroke-dasharray:none; font-weight:normal; stroke-width:1; font-family:&apos;Dialog&apos;; font-style:normal; stroke-linejoin:miter; font-size:12; stroke-dashoffset:0; image-rendering:auto;" xmlns="http://www.w3.org/2000/svg">
+  <!--Gegenereerd door de Verkeersbordendatabank (Vlaamse overheid MOW).-->
+  <defs id="genericDefs" />
+  <g>
+    <g style="fill:rgb(252,255,255); stroke:rgb(252,255,255);" transform="matrix(1,0,0,-1,0,400)">
+      <path d="M0 25 L0 375 L0 375 C-0 381.6304 2.6339 387.9893 7.3223 392.6777 C12.0107 397.3661 18.3696 400 25 400 L75 400 C81.6304 400 87.9893 397.3661 92.6777 392.6777 C97.3661 387.9893 100 381.6304 100 375 L100 25 C100 18.3696 97.3661 12.0107 92.6777 7.3223 C87.9893 2.6339 81.6304 -0 75 0 L75 0 L25 0 L25 0 C18.3696 -0 12.0107 2.6339 7.3223 7.3223 C2.6339 12.0107 -0 18.3696 0 25 Z" style="stroke:none;" />
+    </g>
+    <g style="fill:rgb(20,23,28); stroke:rgb(20,23,28);" transform="matrix(1,0,0,-1,0,400)">
+      <path d="M10 191 L50 255 L90 191 L60 191 L60 20 L40 20 L40 191 L10 191 Z" style="stroke:none;" />
+      <path d="M26.0833 275 L34.25 275 L34.25 298.1467 C34.25 301.3683 36.8617 303.98 40.0833 303.98 C43.305 303.98 45.9167 301.3683 45.9167 298.1467 L45.9167 275 L54.0833 275 L54.0833 298.1467 C54.0833 301.3683 56.695 303.98 59.9167 303.98 C63.1383 303.98 65.75 301.3683 65.75 298.1467 L65.75 275 L73.9167 275 L73.9167 299.4554 C73.9167 304.6479 70.4442 309.1992 65.436 310.5707 C60.4278 311.9422 55.1209 309.7952 52.4753 305.3271 C50.6408 308.4254 47.4637 310.4882 43.887 310.9032 C40.3103 311.3182 36.7452 310.0377 34.25 307.4418 L34.25 310 L26.0833 310 L26.0833 275 Z" style="stroke:none;" />
+    </g>
+  </g>
+</svg>

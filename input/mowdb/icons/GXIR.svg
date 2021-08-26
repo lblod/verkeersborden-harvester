@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="fill-opacity:1; color-rendering:auto; color-interpolation:auto; stroke:black; text-rendering:auto; stroke-linecap:square; stroke-miterlimit:10; stroke-opacity:1; shape-rendering:auto; fill:black; stroke-dasharray:none; font-weight:normal; stroke-width:1; font-family:'Dialog'; font-style:normal; stroke-linejoin:miter; font-size:12; stroke-dashoffset:0; image-rendering:auto;" viewBox="0.0 0.0 900.0 900.0">
+  <!--Gegenereerd door de MOW Symbolenbibliotheek.-->
+  <defs id="genericDefs" />
+  <g>
+    <g style="fill:rgb(252,255,255); stroke:rgb(252,255,255);" transform="matrix(1,0,0,-1,0,900)">
+      <path d="M0 65 L0 835 L0 835 C-0 852.2391 6.8482 868.7721 19.0381 880.9619 C31.2279 893.1518 47.7609 900 65 900 L835 900 C852.2391 900 868.7721 893.1518 880.9619 880.9619 C893.1518 868.7721 900 852.2391 900 835 L900 65 C900 47.7609 893.1518 31.2279 880.9619 19.0381 C868.7721 6.8482 852.2391 -0 835 0 L835 0 L65 0 L65 0 C47.7609 -0 31.2279 6.8482 19.0381 19.0381 C6.8482 31.2279 -0 47.7609 0 65 Z" style="stroke:none;" />
+    </g>
+    <g style="fill:rgb(20,23,28); stroke:rgb(20,23,28);" transform="matrix(1,0,0,-1,0,900)">
+      <path d="M810 50 L741.7958 353.0647 L654.7465 263.3573 L180 724.0372 L180 850 L90 850 L90 685.9628 L592.0709 198.768 L505.0216 109.0607 L810 50 Z" style="stroke:none;" />
+    </g>
+  </g>
+</svg>

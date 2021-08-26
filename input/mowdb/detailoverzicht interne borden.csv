@@ -1,0 +1,85 @@
+Bordcode,foto,betekenis,toepassing,folie < 2x2,afmeting uitz,afmeting beb kom,afmeting < 2x2,afmeting > 2x2,afstand,opstelhoogte normaal,opstelhoogte beb kom-parkeerplaats,opstelhoogte boven rijweg,opmerking
+IE1,,Parkeren uitsluitend voor lichte vrachtauto's en vrachtauto's waarvan de parking beveiligd is,Om aan te duiden dat enkel het parkeren van lichte vrachtauto’s en vrachtauto’s toegelaten is,1,400x600,,600x900,,Op de plaats waar de toelating tot parkeren begint,,2100,,
+IF01,,Voetgangersoversteken buiten verkeerslichten met tramsporen,Om aan te duiden dat de tram voorrang heeft wanneer de voetganger de tramsporen wil kruisen. Deze tramsporen kunnen gelegen zijn in de rijbaan of in een eigen bedding.,1,,400x600,400x600,,"Wordt geplaatst op het voetpad, rechts van de oversteek",1500,,,Wordt steeds dubbelzijdig uitgevoerd zodat het steeds zichtbaar is vanaf de overkant. Zie dienstorder MOW/AWV/2016/1
+IF02,,"Vluchthavens naast autosnelwegen, achter de bestaande pechstroken",Om een vluchthaven aan te duiden,2,,,600x400,900x600,Wordt geplaatst wanneer vluchthaven begint + aankondiging op 300m.,1000,,,"Mogelijk onderbord: Type Ia, Zie Dienstorder LIN/AWV 2001/1"
+IF03,,"SAVE-Bord, gedenkborden voor verongelukte kinderen",,1,,900x600,900x600,,Ter hoogte van het ongeluk,1000,1000,,"Max 10 jaar, niet op A-wegen. Zie dienstorder LIN/AWV 2006/2"
+IF04a,,Aankondiging vaste snelheidscamera,Aankondigingsbord van een onbemande snelheidscamera op autosnelwegen,1,,,,1300x900,,1500,,,Zie Dienstorder MOW/AWV/2009/11
+IF04b,,Aankondiging vaste snelheidscamera,Aankondigingsbord voor een specifiek traject met onbemande snelheidscamera's,1,,,1700x1100,1700x1100,Ter hoogte van een traject met snelheidscamera's,1500,2100,,"Geen bord plaatsen bij individuele snelheidscamera's, enkel op trajecten met minstens 3 snelheidscamera's. Zie Dienstorder MOW/AWV/2009/11"
+IF04c,,Aankondiging trajectcontrole,Aankondigingsbord van een trajectcontrole op autosnelwegen,1,,,,1700x1100,,1500,2100,,Enkel op autosnelwegen. Zie dienstorder MOW/AWV/2015/??
+IF04d,,Snelheidssensibiliseringsbord,Infobord voor aanduiding van het aantal snelheidsovertredingen tijdens een bepaalde periode.,1,,1750x2000,1750x2000,1750x2000,,1500,2100,,MOW/AWV/2015/??
+IF05,,Trajectbevestigingsbord,Wordt geplaatst om een routebevestiging te geven aan de weggebruiker,2,,,,,Wordt geplaatst kort na een kruising of splitsing,1500,,,Zie BRA/570 418 571 van 29/4/1968
+IF06a,,begin havengebied,Aanduiding begin van een havengebied volgens Koninklijk Besluit van 2 februari 1993,2,,,1100x700,1100x700,,1500,2100,,Besluit VR 13 FEBRUARI 2015
+IF06a,,Begin industriezone,Aanduiding begin van een industriezone volgens gewestplan.,2,,,,,,1500,2100,,
+IF06b,,Einde havengebied,Aanduiding einde van een havengebied volgens Koninklijk Besluit van 2 februari 1993,2,,,1100x7000,1100x700,,1500,2100,,Belsuit VR 13 FEBRUARI 2015
+IF06b,,Einde industriezone,Aanduiding einde van een industriezone volgens gewestplan.,2,,,,,,1500,2100,,
+IF07a,,Afstand houden bij mist,Enkel op autosnelwegen,1,,,,3000x2500,,1500,2100,,Zie dienstorder MOW/AWV/2014/3
+IF07b,,Afstand houden voor vrachtwagens,Enkel op autosnelwegen,1,,,,3000x2500,,1500,2100,,Zie dienstorder MOW/AWV/2014/3
+IF08a,,Begin beschermingszone drinkwater,Aanduiding begin beschermingszone drinkwater volgens grondwaterdecreet,1,,,,,,1500,2100,,Overzicht drinkwatergebieden: https://dov.vlaanderen.be/dovweb/html/3waterwingebieden.html
+IF08b,,Einde beschermingszone drinkwater,Aanduiding einde beschermingszone drinkwater volgens grondwaterdecreet,1,,,,,,1500,2100,,
+IF09a,,Brugnummerbord,Duidt het nummer van de betreffende brug aan,1,,,,,Op de brugpijler of ter hoogte van de brug,1000,1000,,
+IF09b,,Brugnummerbord,Duidt het nummer van de betreffende brug aan,1,,,,,,1000,1000,,
+IF09c,,Kunstwerknummerbord,Duidt het nummer van de betreffende kunstwerk aan,1,,,,,,1000,1000,,
+IF09d,,Districtsaanwijzing,Duidt de grens van 2 districten aan,1,,,,,,1000,1000,,
+IF11a,,Infobord op afstand met omleidingsroutes voor transport van gevaarlijke goederen,Geeft aan over hoeveel meter je de gevolgde weg moet verlaten en de omleidingsroute moet volgen,2,,,,,,1500,2100,,Oranje omleidingsborden mogen behouden blijven tot de eerstvolgende globale vervanging. Zie Dienstorder MOW/AWV/2010/8
+IF11b,,Infobord met omleidingsroutes voor transport van gevaarlijke goederen,Geeft de plaats aan waar je de weg moet verlaten en de omleidingsroute moet volgen,2,,,,,,1500,2100,,Oranje omleidingsborden mogen behouden blijven tot de eerstvolgende globale vervanging. Zie dienstorder MOW/AWV/2010/8
+IF12,,Ritsen,Geeft aan over hoeveel meter wanneer wordt aangeraden te ritsen of dat je vanaf die plaats moet ritsen.,1,,,,,,1500,2100,,
+IF13,,Aanduiding brandslang,,1,,,,,,1500,2100,,Voor aanduiding branblusapparaat bestaat het bord F56
+IF13,,Hydrant,,2,,,225x225,225x225,,,2100,,Zie goed om weten 2013/1
+IF14,,Stelt de configuratie van de weg weer,,2,,,,,,1500,2100,,Is variant van F13
+IF15,,Aanduiding wegendistrict,,1,,,,,,1500,2100,,Ter hoogte van de ingang van het wegendistrict. Zie Dienstorder MOW/AWV/2014/19
+IF16,,Aankondiging van een beveiligde parking voor vrachtwagens,"Om een parking aan te geven die, op een relatief korte afstand, in de omgeving gelegen is",1,400x600,,600x900,,Ter hoogte of in de onmiddellijke nabijheid van de parking,1500,2100,,
+IF17,,VIA-bord,Geeft de gewenste route aan,3,,,,,,1500,2100,,Duidt enkel de gewenste uitrit aan.
+IG1,,Grenssignalisatie,Duidt de landsgrens aan,1,,,Zie DO,Zie DO,Aan de landsgrens,1500,2100,,Zie Dienstorder MOW/AWV/2014/19
+IG2,,Grenssignalisatie,Duidt de gewestsgrens aan,1,,,Zie DO,Zie DO,Aan de gewestsgrens,1500,2100,,Zie Dienstorder MOW/AWV/2014/19
+IG3,,Grenssignalisatie,Duidt de provinciegrens aan,1,,,Zie DO,Zie DO,Aan de provinciegrens,1500,2100,,Zie Dienstorder MOW/AWV/2014/19
+IG4,,Grenssignalisatie,Duidt snelheidsregimes in België aan,1,,,Zie DO,Zie DO,Aan de landsgrens,1500,2100,,Zie Dienstorder MOW/AWV/2014/19
+IG5,,"Inhaalverbod voor vrachtwagens met een MTM van meer dan 3,5t waar de rijbaan 2 rijstroken in de gevolgde rijrichting omvat","Om aan te duiden dat vrachtwagens met een MTM van meer dan 3,5t niet mogen voorbijsteken waar de rijbaan 2 rijstroken in de gevolgde rijrichting omvat",1,,,Niet A-wegen: 1100x1700,A-wegen: 2000x2750,Aan de landsgrens,1500,2100,,"Enkel voor vervoer van zaken, niet voor vervoer van personen"
+IG6,,"Inhaalverbod voor bestuurders van voortuigen met een MTM van meer dan 7,5t bij neerslag","Om aan te duiden dat voertuigen met een MTM van meer dan 7,5t niet mogen voorbijsteken bij neerslag en dit in het volledige landsgedeelte",1,,,Niet A-wegen: 1100x1700,A-wegen: 2000x2750,Aan de landsgrens,1500,2100,,Zie brief AG: 16DH-U-07-0136 dd 24/4/2007. Zie AVVG nr. 115
+IM1,,Parkerende vrachtwagens - gebruik van carpoolparkings,Om aan te duiden dat vrachtwagens langer dan 8 uur mogen parkeren op carpoolparkings,1,,,600x300,,Onder F59,1500,2100,,Zie dienstorder LIN/AWV 2006/5. Mag niet onder E-borden
+IM2,,Onderbord bij F98,,1,,,,,,1500,2100,,
+IR10a,,Referentiebord op autosnelwegen en primaire wegen,Te plaatsen op wegen waar er 2 Europese trajecten lopen,1,400x400,,,,,1000,1000,,
+IR10b,,Referentiebord op autosnelwegen en primaire wegen,Te plaatsen op wegen waar er 1 Europees traject loopt,1,400x400,,,,,1000,1000,,
+IR10c,,Referentiebord op autosnelwegen en primaire wegen,Te plaatsen op wegen waar er geen Europees traject loopt,1,400x400,,,,,1000,1000,,
+IR1b,,Referentiebord met km aanduiding,,1,,,700x700,700x700,,1000,1000,,Afmeting 500x500 kan indien te bevestigen tegen new jersey
+IR1c,,Referentiepaal met km aanduiding,,nvt,,,,,,,,,Voorstelling op terrein komt niet overeen met bord. De groene omranding geeft aan dat dit een plastic referentiepaal is. Zie SB250 10/1.16
+IR1d,,Referentiemarkering met km aanduiding,,nvt,,,,,,,,,Voorstelling op terrein komt niet overeen met bord. De groene omranding geeft aan dat dit een markering is.
+IR2b,,Referentiebord met hm aanduiding,,1,,,450x200,,,1000,1000,,
+IR2c,,Referentiepaal met hm aanduiding,,nvt,,,,,,,,,Voorstelling op terrein komt niet overeen met bord. De groene omranding geeft aan dat dit een plastic referentiepaal is. Zie SB250 10/1.17
+IR2d,,Referentiemarkering met hm aanduiding,,nvt,,,,,,,,,Voorstelling op terrein komt niet overeen met bord. De blauwe omranding geeft aan dat dit een markering is.
+IR3a,,Referentiebord met km aanduiding en Ident7,,1,,,450x200,,,1000,1000,,
+IR3b,,Referentiebord met hm aanduiding en Ident7,,1,,,450x200,,,1000,1000,,
+IT1,,Toerisme,Duidt een toeristische streek of stad aan,1,,,3710x2300,3710x2300,,1500,2100,,Zie DO MOW/AWV/2015/??. Enkel op autosnelwegen.
+ITRS,,Tijdelijke richting signalisatie,Signalisatie voor omleidingen bij calamiteiten of wegwerkzaamheden,"3.a (fluo), 3.b (fluo)",,,,,,1500,2100,,Zie vademecum tijdelijke bewegwijzering en SB250 10/1.18
+IU1,,Bord met uitritnummer,Om de nummer van de uitrit aan te duiden wanneer deze niet geïntegreerd kan worden in de F15.,2,,,,1300x1300,Op de galgpaal van F15 waar uitrit volldige breedte heeft. 0-punt,Net onder F15,,,Zie dienstorder MOW/AWV 2014/2. Uitdovend als onafhankelijk bord.
+IU2,,Uitritbord met naam en nummer van de uitrit met vermelding van afstand.,,2,,,,,Op 400m en 1500m voor het 0-punt van de uitrit,1500,,,Bord op 1500m links in middenberm herhalen bij voldoende plaats. Zie dienstorder MOW/AWV 2014/2
+IU3a,,Knooppuntbord met naam van het knooppunt en vermelding van afstand,,2,,,,,Op 1600m van het 0-punt,1500,,,Bij voldoende plaats op middenberm links herhalen. Zie dienstorder MOW/AWV 2014/2
+IU3b,,Knooppuntbord met naam van het knooppunt,,2,,,,,Op 200-400m van de F15 die de afsplitsing van rijstroken aangeeft of de F15 thv de uitrit (0-punt),1500,,,Zie dienstorder MOW/AWV/2014/2
+IU4a,,Nevenbedrijf op afstand,,2,,,,,Zie dienstorder naargelang type parkeerplaats,1500,,,Zie dienstorder MOW/AI/2006/10. Kwaliteitslabels worden niet vermeld (AVVG nr. 107)
+IU4b,,Uitritbord thv nevenbedrijf,,2,,,,,Wordt geplaatst waar uitrit van nevenbedrijf de volledige breedte heeft = 0-punt.,5500,,,Zie dienstorder MOW/AI/2006/10. Kwaliteitslabels worden niet vermeld (AVVG nr. 107)
+IU4c,,Onderbord IU4a met aanduiding daarop volgende tankgelegenheid,,2,,,,,,Onder IU4a,,,Zie dienstorder MOW/AI/2006/10
+IV1,,Retroreflecterende koker,,"2, 3 (fluo)",160x800,160x800,160x800,160x800,,170,170,,Indien geen fluo dient men gebruikt te maken van folietype 2. Zie dienstorder MOW/AWV/2008/26 en SB250 10/1.15.
+IV2,,Inwendig verlichte verkeerszuil,,nvt,,,,,,0,0,,Zie dienstorder MOW/AWV/2008/26
+IV3,,Lichtnagel,,nvt,,,,,,0,0,,
+IV4,,BI-Flash,,nvt,,,,,,0,0,,Zie dienstorder MOW/AWV/2011/6. Mag enkel onder F49
+IV5,,Reflecterende verkeerszuil,,3.a,,,,,,0,0,,Zie dienstorder MWO/AWV/2008/26.
+IVMS1,,Verkeersborden met veranderlijke informatie,Begin van een variabele snelheidszone,nvt,,,,,,1500,2100,,
+IVMS2,,Verkeersborden met veranderlijke informatie,Einde van een variabele snelheidszone,nvt,,,,,,1500,2100,,
+IVMS3,,Verkeersborden met veranderlijke informatie,Variabel politiebord,nvt,,,,,,,,5500,
+IVMS3,,Verkeersborden met veranderlijke informatie,Variabel politiebord,nvt,,,,,,,,5500,
+IVMS4,,Variabele rijstrooksignalisatieborden (RSS),,nvt,,,,,,,,5500,
+IVMS4,,Variabele rijstrooksignalisatieborden (RSS),,nvt,,,,,,,,5500,
+IVMS4,,Variabele rijstrooksignalisatieborden (RSS),,nvt,,,,,,,,5500,
+IVMS5,,Variabele tekstuele borden (VMS),,nvt,,,,,,,,5500,
+IVMS6,,Variabele route informatiepanelen (RVMS),,nvt,,,,,,,,5500,
+IVMS7,,Pijl/Kruis,,nvt,,,,,,,,5500,
+IW1,,GPS-uit,Wordt geplaatst tijdens werken waar de oorspronkelijke weg die de GPS aangeeft niet meer kan worden gevolgd,3.b (fluo),,900x700,900x700,1300x1100,,1500,2100,,Zie dienstorder MOW/AWV/2012/2
+IW2a,,Filewaarschuwingsbord,,3.b (fluo),,,1300x1100,1300x1100,,1500,2100,5500,Zie SB250 10/
+IW2b,,Filewaarschuwingsbord,,3.b (fluo),,,1300x1100,1300x1100,,1500,2100,5500,
+IW2c,,Filewaarschuwingsbord,,3.b (fluo),,,3200x900,3200x900,,1500,2100,5500,
+IW3a,,Verkeershinderaankondigingsbord,Communicatie van wegwerkzaamheden van 1° en 5° cat. op A-wegen,3.b (fluo),,,,2500x1500,,1500,2100,,1 maand voor de beoogde begindatum. Zie dienstorder MOW/AI 2007/10
+IW3b,,Verkeershinderaankondigingsbord,Communicatie van wegwerkzaamheden van 1° en 5° cat. op A-wegen,3.b (fluo),,,,2250x1750,,1500,2100,,1 maand voor de beoogde begindatum. Zie dienstorder MOW/AI 2007/10
+IW4,,Werfsignalisatie,Signalisatie naar handelaarsen diensten tijdens wegenwerken,3.a (fluo),,,,,Ter hoogte van het hek waar de normale doorgang wordt belet.,1500,2100,,Voor doortochtprojecten of complexere werven kan andere signalisatie gewenst zijn. Zie dienstorder MOW/AWV/2015/5
+IW5,,Werfaankondigingsbord,Communicatie van wegwerkzaamheden van 1° en 5° cat. op A-wegen,1,,,,,,1500,2100,,Binnen 15 dagen vanaf de gunning. Zie dienstorder MOW/AI 2007/10
+IW6,,Gewijzigde Verkeerssituatie,,3.b (fluo),,,,,,1500,2100,,
+IW7,,Werfcommunicatiebord,,1,,,1900x900,1900x900,Aan het begin van de werf vlak na bord A31,1500,,,
+Type Id,,Bakens voor signalisatie op afstand,Om de splitsingen aan verkeersknooppunten of uitritten aan autosnelwegen duidelijker zichtbaar te maken.,3.b,"700x1100, 1100x1700",,,1500x2250,Net achter de inwendig verlichte kegel aan de verkeersknooppunten of de uitritten,1000,1000,,"Men neemt steeds de grootste maat , enkel bij plaatgebrek andere maat. Onderkant bord net boven verlichte kegel. Zie dienstorder LIN/AWV 2004/8"
