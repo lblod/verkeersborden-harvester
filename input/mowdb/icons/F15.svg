@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.0//EN' 'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="9000" height="3000">
+<!--Gegenereerd door de SIMaD-toepassing (http://www.dlw.be).-->
+<g style="stroke:none;fill-rule:evenodd;" transform="matrix(1,0,0,-1,0,3000)">
+<path d=" M65 0 L8935 0 A65 65 0 0 1 9000 65 L9000 2935 A65 65 0 0 1 8935 3000 L65 3000 A65 65 0 0 1 0 2935 L0 65 A65 65 0 0 1 65 0 Z" style="fill:rgb(0,0,255);" />
+<path d=" M210 60 L8790 60 A150 150 0 0 1 8940 210 L8940 2790 A150 150 0 0 1 8790 2940 L210 2940 A150 150 0 0 1 60 2790 L60 210 A150 150 0 0 1 210 60 Z" style="fill:rgb(255,255,255);" />
+<path d=" M210 120 L8790 120 A90 90 0 0 1 8880 210 L8880 2790 A90 90 0 0 1 8790 2880 L210 2880 A90 90 0 0 1 120 2790 L120 210 A90 90 0 0 1 210 120 Z" style="fill:rgb(0,0,255);" />
+<path d=" M890 650 L610 650 L610 490 L300 490 L750 250 L1200 490 L890 490 Z" style="fill:rgb(255,255,255);" />
+<path d=" M4640 650 L4360 650 L4360 490 L4050 490 L4500 250 L4950 490 L4640 490 Z" style="fill:rgb(255,255,255);" />
+<path d=" M8390 650 L8110 650 L8110 490 L7800 490 L8250 250 L8700 490 L8390 490 Z" style="fill:rgb(255,255,255);" />
+</g>
+</svg>

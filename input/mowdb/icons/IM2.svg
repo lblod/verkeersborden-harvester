@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.0//EN' 'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="400" height="200">
+<!--Gegenereerd door de SIMaD-toepassing (http://www.dlw.be).-->
+<g style="stroke:none;fill-rule:evenodd;" transform="matrix(1,0,0,-1,0,200)">
+<path d=" M65 0 L334.999995462144 1.56319401867222E-13 A65 65 0 0 1 400 65.0000045378561 L399.999999999999 134.999987520896 A65 65 0 0 1 335.000004537856 200 L65.0000045378561 200 A65 65 0 0 1 1.56319401867222E-13 134.999995462144 L1.56319401867222E-13 65.0000045378561 A65 65 0 0 1 65.0000045378561 1.56319401867222E-13 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);" />
+<path d=" M303.86 100 L303.86 40 L333.86 40 L333.86 100 L378.86 100 L318.86 160 L258.86 100 Z" style="fill:rgb(0,0,0);" />
+<path d=" M96.14 100 L96.14 160 L66.14 160 L66.14 100 L21.14 100 L81.14 40 L141.14 100 Z" style="fill:rgb(0,0,0);" />
+</g>
+</svg>

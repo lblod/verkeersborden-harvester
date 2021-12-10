@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="450"
+   height="200"
+   id="svg2"
+   style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;font-family:Dialog">
+  <defs
+     id="genericDefs" />
+  <path
+     d="m -0.1864407,100.54237 0,-54.999997 c 0,-11.9347 4.7411,-23.3807 13.1801977,-31.8198 8.4391,-8.4391001 19.8851,-13.1802003 31.8198,-13.1802003 l 360.000003,0 c 11.9348,0 23.3807,4.7411002 31.8198,13.1802003 8.4391,8.4391 13.1802,19.8851 13.1802,31.8198 l 0,54.999997 -450.0000007,0 z"
+     id="path2942"
+     style="font-size:12px;font-style:normal;font-weight:normal;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Dialog" />
+  <path
+     d="m -0.1864407,100.54237 0,55 c 0,11.9347 4.7411,23.3807 13.1801977,31.8198 8.4391,8.4391 19.8851,13.1802 31.8198,13.1802 l 360.000003,0 c 11.9348,0 23.3807,-4.7411 31.8198,-13.1802 8.4391,-8.4391 13.1802,-19.8851 13.1802,-31.8198 l 0,-55 -450.0000007,0 z"
+     id="path2824"
+     style="font-size:12px;font-style:normal;font-weight:normal;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Dialog" />
+  <path
+     d="m 305.22996,179.88136 0,-8.05085 8.05085,0 8.05084,0 0,8.05085 0,8.05084 -8.05084,0 -8.05085,0 0,-8.05084 z"
+     id="path2835"
+     style="fill:#c71712;fill-opacity:1;stroke:none" />
+</svg>
